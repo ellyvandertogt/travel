@@ -23,6 +23,7 @@ body {
 
 }
 
+/* HEADER */
 header {
     position: fixed;
     top: 0;
@@ -72,6 +73,19 @@ header {
     display: none;
 }
 
+header .sticky {
+    background: var(--bg-color);  /*it doesn't work. on the header- background: transparent. why not body .sticky; see line 36 */
+    padding: 10px 18%;
+    box-shadow: rgba(33 35 38 01) 0px 10px 10px --10px;
+}
+.sticky .logo{ /*why .sticky .logo. select only "logo" works the same */
+    color: var(--text-color);
+}
+.sticky .navbar a {
+    color: var(--text-color);
+}
+/* HOME SECTION */
+
 section {
     padding: 80px 18%;
 }
@@ -117,24 +131,85 @@ section {
     transform: scale(1.1);
 }
 
-.row-items {
+/* .row-items {
     display: flex;
     justify-content: center;
     gap: 90px;
     list-style-type: none;
     position: relative;
 
+} */
+
+.row-items {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(100px, auto)); 
+   grid-gap: 2rem;
+   align-items: center;
+   text-align: center;
+   margin-top: 5rem;
 }
+
+/* CONTAINER */
+.text h2 {
+    font-size: var(--h2-font);
+    line-height: 1.1;
+}
+/* .container-img img {  ??????? 
+    width: 30px;
+    height: 30px;
+} */
 
 .container-img img {
-    weight: 30px;
-    height: 30px;
+    height: 85px;
+    width: 85px;
+    padding: 15px;
+    background: var(--bg-color);
+    box-shadow: 5px 10px 30px rgb(85 85 85 / 20%); 
+    border-radius: 10px;
+    margin-bottom: 1px;
 }
 
-div .image {
+/* div .image {
     position: relative;;
     justify-content: center;
+} */
+
+.container-box {
+    background-color: var(--bg-color);
+    border: 1px solid #f0eded;
+    padding: 50px 10px;
+    border-radius: 10px;
+    transition: all 1s ease 0s;  /* ????????? */
+    cursor: pointer;
 }
+.container-box h4 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+.container-box p {
+    font-size: 15px;
+    color: var(--second-color);
+}
+.container-box:hover { /*??????????*/
+    box-shadow: 5px 30px 56.1276px rgb(55 55 55 / 12%); 
+    border: 1px solid transparent;
+    transform: translateY(-3px);
+}
+
+/* PACKAGE SECTION  */
+
+.title {
+    text-align: center;
+}
+
+.title h2 {
+    font-size: var(--h2-font);
+}
+
+
+
+
 
 
 12.23
