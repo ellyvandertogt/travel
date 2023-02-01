@@ -73,10 +73,10 @@ header {
     display: none;
 }
 
-header .sticky {
+header.sticky {
     background: var(--bg-color);  /*it doesn't work. on the header- background: transparent. why not body .sticky; see line 36 */
     padding: 10px 18%;
-    box-shadow: rgba(33 35 38 01) 0px 10px 10px --10px;
+    box-shadow: 0px 10px 10px -10px rgba(33, 35, 38, 01);
 }
 .sticky .logo{ /*why .sticky .logo. select only "logo" works the same */
     color: var(--text-color);
@@ -97,7 +97,6 @@ section {
     background-size: cover;
     background-position: center;
     display: grid;
-    grid-template-columns: repeat(1, 1fr); /*?????????*/
     align-items: center; /*?????????*/
 }
 .home-text h1 {
@@ -121,7 +120,7 @@ section {
     display: inline-block;
     font-size: 16px;
     padding: 15px 30px;
-    background: #ffffffbf; /* diff. background and background color*/
+    background: #ffffffbf; 
     color: var(--main-color);
     border-radius: 5px;
     transition: ease .40s;
@@ -142,7 +141,7 @@ section {
 
 .row-items {
    display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(100px, auto)); 
+   grid-template-columns: repeat(auto-fit, minmax(100px, auto)); /*???*/
    grid-gap: 2rem;
    align-items: center;
    text-align: center;
@@ -180,7 +179,7 @@ section {
     border: 1px solid #f0eded;
     padding: 50px 10px;
     border-radius: 10px;
-    transition: all 1s ease 0s;  /* ????????? */
+    transition: all 1s ease 0s;  /*fast and slowly */
     cursor: pointer;
 }
 .container-box h4 {
@@ -192,7 +191,7 @@ section {
     font-size: 15px;
     color: var(--second-color);
 }
-.container-box:hover { /*??????????*/
+.container-box:hover { 
     box-shadow: 5px 30px 56.1276px rgb(55 55 55 / 12%); 
     border: 1px solid transparent;
     transform: translateY(-3px);
@@ -276,7 +275,7 @@ section {
     border-radius: 4%; 
     filter: brightness(80%);
     transition: all .3s cubic-bezier(.445, .05, .55, .95);
-    will-change: filter; /*????????? */
+    will-change: filter; 
 
 }
 
@@ -295,7 +294,7 @@ section {
 .col-content h5 {
     position: absolute;
     font-size: 22px;
-    font-weight: 100px;
+    font-weight: 600;
     color: var(--bg-color);
     left: 15px;
     bottom: 40px; 
@@ -312,7 +311,7 @@ section {
 }
 
 .col-content img:hover {
-    filter: brightness(100%) hue-rotate(45deg);
+    filter: brightness(100%);
     transform: scale(1.04);
     cursor: pointer;
 }
@@ -322,9 +321,9 @@ section {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center; /*??????*/
+    align-items: center; 
     grid-gap: 3rem;
-    
+
 }
 
 .news-text h2 {
@@ -338,7 +337,7 @@ section {
     line-height: 30px;
 }
 
-.newsletter form { /*why not only just "form"*/
+.newsletter form { 
     max-width: 100%;
     width: 450px;
     position: relative;
@@ -370,7 +369,7 @@ section {
 }
 
 /* FOOTER */
-#contact {  /*Why it doesn't work with footer*/
+#contact {  
     background: var(--main-color);
 }
 
@@ -393,7 +392,7 @@ section {
     position: relative;
 }
 
-.list h4::before { /*??????????*/
+.list h4::before { 
     content: "";
     position: absolute;
     height: 2px;
@@ -403,48 +402,44 @@ section {
     background: var(--bg-color);
 }
 
-/* .list ul li:not(last-child) { ON YOU TUBE = WHY NOT JUST ul - li 
-    margin-bottom: 16px;
-} */
-
-ul li:not(last-child) { /*why "not last-child"*/
+.list ul li:not(last-child) { 
     margin-bottom: 16px;
 }
 
-ul li a {
+.list ul li a {
     color: #ffffffbf;
     font-size: var(--p-font);
     display: block;
     transition: .3s;
 }
 
-ul li a:hover {
+.list ul li a:hover {
     color: var(--bg-color);
     transform: translateX(14px) ;
 }
 
-/*.list*/.social a { 
-    height: 40px; /*nothing change when the value is changing */
+.list .social a { 
+    height: 40px; 
     width: 40px;
     background: var(--bg-color);
-    color: var(--main-color); /* why can you change the color. can we try on other images*/
-    /* display: inline-flex;  ????????????
-    align-items: center; */
+    color: var(--main-color);
+    align-items: center;
     justify-content: center;
     font-size: 21px;
     border-radius: 5px;
-    transition: 3s;
+    transition: .03s;
     margin-right: 10px;
-    /* justify-content: space-between; =??????????????*/
+    justify-content: space-between; 
+    /* display: inline-flex; */
 } 
 
-/*.list*/.social a:hover { /*it doesn't work*/
+.list .social a:hover { 
     transform: scale(1.1);
 }
 
 .end-text {
     font-size: 10px;
-    text-align: center; /*???????? it doesn't work*/
+    text-align: center;
     padding-top: 90px;
 }
 
@@ -488,7 +483,7 @@ ul li a:hover {
     .navbar {  
         position: absolute;
         top: 0;
-        right: -100;
+        right: -100%; /*????*/
         width: 270;
         height: 120vh;
         background: #1067cc;
@@ -529,7 +524,14 @@ ul li a:hover {
         --h2-font: 1.8rem;
         transition: .2s;
     }
+    .text {
+        text-align: center;
+    }
+    .home {
+        height: 85vh;
+        transition: .2s;
+    }
 }
 
 
-28.45
+
