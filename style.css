@@ -228,11 +228,11 @@ section {
     border-radius: 4%;   
 }
 
-.thum h3 {
+.thum h3 {  /*??????????*/
     position: absolute;
     font-size: 15px;
     font-weight: 600;
-    text-align: right;
+    text-align: center;
     color: var(--bg-color);
     top: 36px;
     right: 10px;
